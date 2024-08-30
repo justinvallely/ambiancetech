@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+SITEMAP: ambiancetech.com/sitemap.xml

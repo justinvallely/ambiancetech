@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ambiance Technology, LLC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body class="bg-body" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <title>Search</title>
+        <path fill="currentColor" d="M19 3C13.488 3 9 7.488 9 13c0 2.395.84 4.59 2.25 6.313L3.281 27.28l1.439 1.44l7.968-7.969A9.922 9.922 0 0 0 19 23c5.512 0 10-4.488 10-10S24.512 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8s-8-3.57-8-8s3.57-8 8-8z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-left" viewBox="0 0 32 32">
+        <path fill="currentColor" d="m13.281 6.781l-8.5 8.5l-.687.719l.687.719l8.5 8.5l1.438-1.438L7.938 17H28v-2H7.937l6.782-6.781z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-right" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M18.719 6.781L17.28 8.22L24.063 15H4v2h20.063l-6.782 6.781l1.438 1.438l8.5-8.5l.687-.719l-.687-.719z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="shipping-fast" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M0 6v2h19v15h-6.156c-.446-1.719-1.992-3-3.844-3c-1.852 0-3.398 1.281-3.844 3H4v-5H2v7h3.156c.446 1.719 1.992 3 3.844 3c1.852 0 3.398-1.281 3.844-3h8.312c.446 1.719 1.992 3 3.844 3c1.852 0 3.398-1.281 3.844-3H32v-8.156l-.063-.157l-2-6L29.72 10H21V6zm1 4v2h9v-2zm20 2h7.281L30 17.125V23h-1.156c-.446-1.719-1.992-3-3.844-3c-1.852 0-3.398 1.281-3.844 3H21zM2 14v2h6v-2zm7 8c1.117 0 2 .883 2 2s-.883 2-2 2s-2-.883-2-2s.883-2 2-2zm16 0c1.117 0 2 .883 2 2s-.883 2-2 2s-2-.883-2-2s.883-2 2-2z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="shopping-cart" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M5 7c-.55 0-1 .45-1 1s.45 1 1 1h2.219l2.625 10.5c.222.89 1.02 1.5 1.937 1.5H23.25c.902 0 1.668-.598 1.906-1.469L27.75 10H11l.5 2h13.656l-1.906 7H11.781L9.156 8.5A1.983 1.983 0 0 0 7.22 7zm17 14c-1.645 0-3 1.355-3 3s1.355 3 3 3s3-1.355 3-3s-1.355-3-3-3zm-9 0c-1.645 0-3 1.355-3 3s1.355 3 3 3s3-1.355 3-3s-1.355-3-3-3zm0 2c.563 0 1 .438 1 1c0 .563-.438 1-1 1c-.563 0-1-.438-1-1c0-.563.438-1 1-1zm9 0c.563 0 1 .438 1 1c0 .563-.438 1-1 1c-.563 0-1-.438-1-1c0-.563.438-1 1-1z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="gift" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M12 5c-1.645 0-3 1.355-3 3c0 .352.074.684.188 1H4v6h1v13h22V15h1V9h-5.188A2.95 2.95 0 0 0 23 8c0-1.645-1.355-3-3-3c-1.75 0-2.938 1.328-3.719 2.438c-.105.148-.187.292-.281.437c-.094-.145-.176-.29-.281-.438C14.938 6.329 13.75 5 12 5zm0 2c.625 0 1.438.672 2.063 1.563c.152.218.128.23.25.437H12c-.566 0-1-.434-1-1c0-.566.434-1 1-1zm8 0c.566 0 1 .434 1 1c0 .566-.434 1-1 1h-2.313c.122-.207.098-.219.25-.438C18.563 7.673 19.375 7 20 7zM6 11h20v2h-9v-1h-2v1H6zm1 4h18v11h-8V16h-2v10H7z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="return" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13s13-5.832 13-13h-2c0 6.086-4.914 11-11 11S5 22.086 5 16S9.914 5 16 5c3.875 0 7.262 1.984 9.219 5H20v2h8V4h-2v3.719C23.617 4.844 20.02 3 16 3z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="warranty" viewBox="0 0 32 32">
+        <path fill="currentColor" d="M16 2C9.925 2 5 4 5 4v9c0 7.722 6.09 14.545 10.906 16.722c.066.03.136.03.197.031c.062 0 .132 0 .198-.031C20.91 27.545 27 20.722 27 13V4s-4.925-2-11-2zm0 2c5.112 0 8.816 1.514 10 2.057v7.036c0 6.276-4.953 12.19-9 14.514c-4.047-2.324-9-8.238-9-14.514V6.057C7.184 5.514 10.888 4 16 4z"/>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="consultation" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4606 1.25H13.5394C15.1427 1.24999 16.3997 1.24999 17.4039 1.34547C18.4274 1.44279 19.2655 1.64457 20.0044 2.09732C20.7781 2.57144 21.4286 3.22194 21.9027 3.99563C22.3554 4.73445 22.5572 5.57256 22.6545 6.59611C22.75 7.60029 22.75 8.85725 22.75 10.4606V11.5278C22.75 12.6691 22.75 13.564 22.7007 14.2868C22.6505 15.0223 22.5468 15.6344 22.3123 16.2004C21.7287 17.6093 20.6093 18.7287 19.2004 19.3123C18.3955 19.6457 17.4786 19.7197 16.2233 19.7413C15.7842 19.7489 15.5061 19.7545 15.2941 19.7779C15.096 19.7999 15.0192 19.832 14.9742 19.8582C14.9268 19.8857 14.8622 19.936 14.7501 20.0898C14.6287 20.2564 14.4916 20.4865 14.2742 20.8539L13.7321 21.7697C12.9585 23.0767 11.0415 23.0767 10.2679 21.7697L9.72579 20.8539C9.50835 20.4865 9.37122 20.2564 9.24985 20.0898C9.13772 19.936 9.07313 19.8857 9.02572 19.8582C8.98078 19.832 8.90399 19.7999 8.70588 19.7779C8.49387 19.7545 8.21575 19.7489 7.77666 19.7413C6.52138 19.7197 5.60454 19.6457 4.79957 19.3123C3.39066 18.7287 2.27128 17.6093 1.68769 16.2004C1.45323 15.6344 1.3495 15.0223 1.29932 14.2868C1.24999 13.564 1.25 12.6691 1.25 11.5278L1.25 10.4606C1.24999 8.85726 1.24999 7.60029 1.34547 6.59611C1.44279 5.57256 1.64457 4.73445 2.09732 3.99563C2.57144 3.22194 3.22194 2.57144 3.99563 2.09732C4.73445 1.64457 5.57256 1.44279 6.59611 1.34547C7.60029 1.24999 8.85726 1.24999 10.4606 1.25ZM6.73809 2.83873C5.82434 2.92561 5.24291 3.09223 4.77938 3.37628C4.20752 3.72672 3.72672 4.20752 3.37628 4.77938C3.09223 5.24291 2.92561 5.82434 2.83873 6.73809C2.75079 7.663 2.75 8.84876 2.75 10.5V11.5C2.75 12.6751 2.75041 13.5189 2.79584 14.1847C2.84081 14.8438 2.92737 15.2736 3.07351 15.6264C3.50486 16.6678 4.33223 17.4951 5.3736 17.9265C5.88923 18.1401 6.54706 18.2199 7.8025 18.2416L7.83432 18.2421C8.23232 18.249 8.58109 18.2549 8.87097 18.287C9.18246 18.3215 9.4871 18.3912 9.77986 18.5615C10.0702 18.7304 10.2795 18.9559 10.4621 19.2063C10.6307 19.4378 10.804 19.7306 11.0004 20.0623L11.5587 21.0057C11.7515 21.3313 12.2485 21.3313 12.4412 21.0057L12.9996 20.0623C13.1959 19.7306 13.3692 19.4378 13.5379 19.2063C13.7204 18.9559 13.9298 18.7304 14.2201 18.5615C14.5129 18.3912 14.8175 18.3215 15.129 18.287C15.4189 18.2549 15.7676 18.249 16.1656 18.2421L16.1975 18.2416C17.4529 18.2199 18.1108 18.1401 18.6264 17.9265C19.6678 17.4951 20.4951 16.6678 20.9265 15.6264C21.0726 15.2736 21.1592 14.8438 21.2042 14.1847C21.2496 13.5189 21.25 12.6751 21.25 11.5V10.5C21.25 8.84876 21.2492 7.663 21.1613 6.73809C21.0744 5.82434 20.9078 5.24291 20.6237 4.77938C20.2733 4.20752 19.7925 3.72672 19.2206 3.37628C18.7571 3.09223 18.1757 2.92561 17.2619 2.83873C16.337 2.75079 15.1512 2.75 13.5 2.75H10.5C8.84876 2.75 7.663 2.75079 6.73809 2.83873ZM7.25 9C7.25 8.58579 7.58579 8.25 8 8.25H16C16.4142 8.25 16.75 8.58579 16.75 9C16.75 9.41421 16.4142 9.75 16 9.75H8C7.58579 9.75 7.25 9.41421 7.25 9ZM7.25 12.5C7.25 12.0858 7.58579 11.75 8 11.75H13.5C13.9142 11.75 14.25 12.0858 14.25 12.5C14.25 12.9142 13.9142 13.25 13.5 13.25H8C7.58579 13.25 7.25 12.9142 7.25 12.5Z" fill="currentColor"/>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="pencil-ruler" viewBox="0 0 24 24">
+        <path stroke="currentColor" fill=none d="M12,14.86l-1.91,1.91L8.18,14.86V3.41a1.91,1.91,0,0,1,3.82,0Z"/>
+        <path stroke="currentColor" fill=none d="M12,7.23h6.68v9.54h1a2.87,2.87,0,0,1,0,5.73H1.5V7.23H8.18"/>
+        <path stroke="currentColor" fill=none d="M22.5,4.36V19.64a2.86,2.86,0,0,0-2.86-2.87h-1V1.5h1A2.86,2.86,0,0,1,22.5,4.36Z"/>
+        <line stroke="currentColor" fill=none x1="8.18" y1="5.32" x2="12" y2="5.32"/>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="quote" viewBox="0 0 24 24">
+        <path fill="currentColor" d="m15 17l2-4h-4V6h7v7l-2 4h-3Zm-9 0l2-4H4V6h7v7l-2 4H6Z" />
+      </symbol>      
+      <symbol xmlns="http://www.w3.org/2000/svg" id="nav-icon" viewBox="0 0 16 16">
+        <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 16 16">
+        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
+        <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
+      </symbol>
+    </svg>
+
+    <div id="preloader">
+      <span class="loader">
+        <span class="loader-inner"></span>
+      </span>
+    </div>
+
+    <div class="search-box position-relative overflow-hidden w-100">
+      <div class="search-wrap">
+        <div class="close-button position-absolute">
+          <svg class="close" width="22" height="22">
+            <use xlink:href="#close"></use>
+          </svg>
+        </div>
+        <form id="search-form" class="text-center pt-3" action="" method="">
+          <input type="text" class="search-input fs-5 p-4 bg-transparent" placeholder="Search...">
+          <svg class="search" width="22" height="22">
+            <use xlink:href="#search"></use>
+          </svg>
+        </form>
+      </div>
+    </div> 
+
+    <header id="header" class="site-header text-black">
+      <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/main-logo.png" class="logo">
+          </a>
+          <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <svg class="navbar-icon" width="50" height="50">
+              <use xlink:href="#navbar-icon"></use>
+            </svg>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
+            <div class="offcanvas-header px-4 pb-0">
+              <a class="navbar-brand" href="index.html">
+                <img src="images/main-logo.png" class="logo">
+              </a>
+              <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul id="navbar" class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link me-4" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-4" href="#company-services">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-4" href="#about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-4" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <div class="user-items ps-5">
+                    <ul class="d-flex justify-content-end list-unstyled">
+                      <li class="search-item pe-3" data-bs-toggle="collapse" data-bs-target="#search-box" aria-controls="search-box" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg class="search" width="18" height="18">
+                          <use xlink:href="#search"></use>
+                        </svg>
+                      </li>
+                      <li class="pe-3">
+                        <a href="#">
+                          <svg class="user" width="18" height="18">
+                            <use xlink:href="#user"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cart.html">
+                          <svg class="cart" width="18" height="18">
+                            <use xlink:href="#cart"></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>    
+    </header>
+
+    <section id="home" class="overflow-hidden">
+      <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="banner-item" style="background-image: url(images/banner-image1.jpg); background-repeat: no-repeat; background-position: right; height: 682px;">
+                    <div class="banner-content padding-large">
+                      <h1 class="display-1 text-uppercase text-dark pb-2">Elevate your space</h1>
+                      <p>At Ambiance Technology, we specialize in providing cutting-edge low-voltage solutions tailored to meet your needs. Whether you're looking to transform your home into a smart, connected space or enhance your business with top-of-the-line audio/video systems, we've got you covered.</p>                      
+                      <a href="#company-services" class="btn btn-medium btn-arrow position-relative mt-5">
+                        <span class="text-uppercase">Learn More</span>            
+                        <svg class="arrow-right position-absolute" width="18" height="20">
+                          <use xlink:href="#arrow-right"></use>
+                        </svg>
+                      </a>   
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination position-absolute"></div>
+    </section>
+
+    <section id="company-services" class="padding-large">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 pb-3">
+            <div class="icon-box d-flex align-items-center">
+              <div class="icon-box-icon pt-3 pe-3 pb-3 ps-3">
+                <svg class="shipping-fast">
+                  <use xlink:href="#shipping-fast" />
+                </svg>
+              </div>
+              <div class="icon-box-content ps-3">
+                <h3 class="card-title text-uppercase text-dark">Fast Installation Services</h3>
+                <p>Enjoy quick and efficient installation of your smart home, home theater, or security systems by our expert technicians.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 pb-3">
+            <div class="icon-box d-flex align-items-center">
+              <div class="icon-box-icon pt-3 pe-3 pb-3 ps-3">
+                <svg class="consultation">
+                  <use xlink:href="#consultation" />
+                </svg>
+              </div>
+              <div class="icon-box-content ps-3">
+                <h3 class="card-title text-uppercase text-dark">On-Site Consultations</h3>
+                <p>Schedule a personalized consultation at your home or business to discuss your specific needs and design the perfect solution.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 pb-3">
+            <div class="icon-box d-flex align-items-center">
+              <div class="icon-box-icon pt-3 pe-3 pb-3 ps-3">
+                <svg class="custom-design">
+                  <use xlink:href="#pencil-ruler" />
+                </svg>
+              </div>
+              <div class="icon-box-content ps-3">
+                <h3 class="card-title text-uppercase text-dark">Custom Design & Integration</h3>
+                <p>Receive tailored solutions that seamlessly integrate with your existing systems and décor for a cohesive look and feel.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 pb-3">
+            <div class="icon-box d-flex align-items-center">
+              <div class="icon-box-icon pt-3 pe-3 pb-3 ps-3">
+                <svg class="warranty">
+                  <use xlink:href="#warranty" />
+                </svg>
+              </div>
+              <div class="icon-box-content ps-3">
+                <h3 class="card-title text-uppercase text-dark">Warranty & Support</h3>
+                <p>Benefit from comprehensive warranty coverage and ongoing support to ensure your systems continue to perform at their best.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections" class="position-relative padding-large">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="swiper collection-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide overflow-hidden">
+                <div class="product-card">
+                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                    <h3 class="card-title text-uppercase">
+                      <a href="shop.html">Smart Homes</a>
+                    </h3>
+                  </div>
+                  <div class="image-overlay position-relative">
+                    <div class="product-image">
+                      <img src="images/product-item5.jpg" alt="product-item" class="product-image img-fluid">
+                      <div class="text-box box-slide position-absolute">
+                        <div class="text-content p-5 bg-light">
+                          <h3>Smart Homes</h3>
+                          <p>Experience the future of living with our smart home solutions. We offer seamless integration of your devices, allowing you to control lighting, climate, entertainment, and security from your smartphone or voice-activated assistant. Our systems are designed to make your home more convenient, energy-efficient, and secure, giving you peace of mind and a touch of luxury.</p>
+                          <a href="#contact" class="btn btn-normal mt-3">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+              <div class="swiper-slide overflow-hidden">
+                <div class="product-card">
+                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                    <h3 class="card-title text-uppercase">
+                      <a href="shop.html">Private Cinemas</a>
+                    </h3>
+                  </div>
+                  <div class="image-overlay position-relative">
+                    <div class="product-image">
+                      <img src="images/product-item6.jpg" alt="product-item" class="product-image img-fluid">
+
+                      <div class="text-box box-slide position-absolute">
+                        <div class="text-content p-5 bg-light">
+                          <h3>Private Cinemas</h3>
+                          <p>Turn your dedicated space into a cinematic experience with our custom home theater installations. From high-definition projectors and surround sound systems to plush seating and ambient lighting, we design and install everything you need for the ultimate movie night. Our experts work with you to create a space that’s perfect for watching films, gaming, or enjoying your favorite sports in stunning detail.</p>
+                          <a href="#contact" class="btn btn-normal mt-3">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- product-image -->
+                  </div>                  
+                </div>
+              </div>
+              <div class="swiper-slide overflow-hidden">
+                <div class="product-card">
+                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                    <h3 class="card-title text-uppercase">
+                      <a href="shop.html">Lighting/Shades</a>
+                    </h3>
+                  </div>
+                  <div class="image-overlay position-relative">
+                    <div class="product-image">
+                      <img src="images/product-item7.jpg" alt="product-item" class="product-image img-fluid">
+
+                      <div class="text-box box-slide position-absolute">
+                        <div class="text-content p-5 bg-light">
+                          <h3>Lighting/Shades</h3>
+                          <p>Set the perfect ambiance with our lighting and shade solutions. We offer automated lighting controls and motorized shades that adjust according to your preferences or the time of day. Whether you're looking to save energy, enhance security, or create a specific mood, our solutions give you full control over your environment with the touch of a button.</p>
+                          <a href="#contact" class="btn btn-normal mt-3">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- product-image -->
+                  </div>                  
+                </div>
+              </div>
+              <div class="swiper-slide overflow-hidden">
+                <div class="product-card">
+                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                    <h3 class="card-title text-uppercase">
+                      <a href="shop.html">Networking Solutions</a>
+                    </h3>
+                  </div>
+                  <div class="image-overlay position-relative">
+                    <div class="product-image">
+                      <img src="images/product-item8.jpg" alt="product-item" class="product-image img-fluid">
+
+                      <div class="text-box box-slide position-absolute">
+                        <div class="text-content p-5 bg-light">
+                          <h3>Networking Solutions</h3>
+                          <p>Stay connected with our reliable networking solutions. We provide high-speed Wi-Fi coverage, wired network installations, and secure setups that keep your home or business online without interruption. Our solutions are tailored to your space and needs, ensuring that every device from laptops to smart TVs operates smoothly and securely.</p>
+                          <a href="#contact" class="btn btn-normal mt-3">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- product-image -->
+                  </div>                  
+                </div>
+              </div>
+              <div class="swiper-slide overflow-hidden">
+                <div class="product-card">
+                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                    <h3 class="card-title text-uppercase">
+                      <a href="shop.html">Security Systems</a>
+                    </h3>
+                  </div>
+                  <div class="image-overlay position-relative">
+                    <div class="product-image">
+                      <img src="images/product-item9.jpg" alt="product-item" class="product-image img-fluid">
+
+                      <div class="text-box box-slide position-absolute">
+                        <div class="text-content p-5 bg-light">
+                          <h3>Security Systems</h3>
+                          <p>Protect what matters most with our advanced security systems. We offer state-of-the-art surveillance cameras, alarm systems, and smart locks that you can monitor and control from anywhere. Our systems are designed to deter intruders, alert you to suspicious activity, and give you complete control over your property's security.</p>
+                          <a href="#contact" class="btn btn-normal mt-3">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- product-image -->
+                  </div>                  
+                </div>
+              </div>
+              <div class="swiper-slide overflow-hidden">
+                <div class="product-card">
+                  <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
+                    <h3 class="card-title text-uppercase">
+                      <a href="shop.html">Commercial Audio/Video</a>
+                    </h3>
+                  </div>
+                  <div class="image-overlay position-relative">
+                    <div class="product-image">
+                      <img src="images/product-item10.jpg" alt="product-item" class="product-image img-fluid">
+
+                      <div class="text-box box-slide position-absolute">
+                        <div class="text-content p-5 bg-light">
+                          <h3>Commercial Audio/Video</h3>
+                          <p>Enhance your business environment with our commercial audio and video solutions. Whether you need a conference room setup, digital signage, or a full-scale video wall, we provide professional installations that ensure clear communication and an engaging experience for your clients and employees. Our systems are scalable and can be customized to fit the unique needs of your business.</p>
+                          <a href="#contact" class="btn btn-normal mt-3">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- product-image -->
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination position-absolute text-center"></div>
+    </section>
+
+    <section id="testimonials" class="position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="review-content position-relative">
+            <div class="swiper-icon swiper-arrow swiper-arrow-prev position-absolute d-flex align-items-center justify-content-center">
+              <svg class="icon-arrow" width="25" height="25">
+                <use xlink:href="#arrow-left" />
+              </svg>
+            </div>
+            <div class="swiper testimonial-swiper">
+              <div class="quotation text-center">
+                <svg class="quote">
+                  <use xlink:href="#quote" />
+                </svg>
+              </div>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide text-center d-flex justify-content-center">
+                  <div class="review-item col-md-10">
+                    <i class="icon icon-review"></i>
+                    <blockquote class="fs-4">“Transforming our home with Ambiance Technology was a game changer! Their team installed a state-of-the-art home theater system that has completely redefined our movie nights. The attention to detail and professionalism were outstanding. We also appreciated their quick and efficient installation process. Highly recommend them for anyone looking to elevate their home experience!”</blockquote>
+                    <div class="author-detail">
+                      <div class="name text-primary text-uppercase pt-2">Jessica & Mark R.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide text-center d-flex justify-content-center">
+                  <div class="review-item col-md-10">
+                    <i class="icon icon-review"></i>
+                    <blockquote class="fs-4">“We worked with Ambiance Technology to upgrade our restaurant's AV systems, and we couldn't be happier with the results. Their team installed a fantastic sound system and strategically placed TVs that have greatly enhanced the experience for our diners. Additionally, their networking and security solutions have been reliable and efficient, giving us confidence in our day-to-day operations. The entire process was smooth and professional!”</blockquote>
+                    <div class="author-detail">
+                      <div class="name text-primary text-uppercase pt-2">Sophia L., Owner of Bella Vista Bistro</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-icon swiper-arrow swiper-arrow-next position-absolute d-flex align-items-center justify-content-center">
+              <svg class="icon-arrow" width="25" height="25">
+                <use xlink:href="#arrow-right" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <div class="swiper-pagination text-center position-absolute"></div>
+    </section>
+
+    <section id="about-us">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-between g-5">
+          <div class="col-lg-6">
+            <div class="image-holder mb-4 jarallax">
+                <img src="images/single-image1.jpg" alt="single" class="img-fluid jarallax-img">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="detail p-5">
+              <div class="display-header">
+                <h2 class="display-2 text-uppercase text-dark pb-2">About Us</h2>
+                <p class="pb-3">Based in Denver Colorado, Ambiance Technology, LLC has been designing and building low voltage systems since 2008. We work with custom home builders early in the design process to ensure every detail is planned for; making installations seamless and trouble-free for both home owners and contractors. We closely follow industry trends to future-proof your installation so that when the next, latest and greatest device comes out, your infrastructure is capable of supporting it.</p> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="subscribe">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <div class="subscribe-content padding-large">
+              <div class="subscribe-header">
+                <h2 class="display-4">Ready to transform your space?</h2>
+                <p>Contact us today to schedule a consultation and discover how Ambiance Technology can bring your vision to life.</p>
+              </div>
+              <form>
+                <input type="text" name="email" placeholder="Enter Your Email Addresss" class="w-100 bg-light border-0 ps-5 fst-italic">
+                <button class="btn btn-full btn-black text-uppercase">Contact Us</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brand-collection" class="padding-small border-top border-bottom overflow-hidden margin-large mb-0">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <a href="#"><img src="images/brand-logo-1.svg" alt="brand"></a>
+            <a href="#"><img src="images/brand-logo-2.svg" alt="brand"></a>
+            <a href="#"><img src="images/brand-logo-3.svg" alt="brand"></a>
+            <a href="#"><img src="images/brand-logo-4.svg" alt="brand"></a>
+            <a href="#"><img src="images/brand-logo-5.svg" alt="brand"></a>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="overflow-hidden padding-large">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="row d-flex flex-wrap justify-content-between">
+            <div class="col-lg-3 col-sm-6 pb-3 pe-4">
+              <div class="footer-menu">
+                <img src="images/main-logo.png" alt="logo" class="pb-3">
+                <p>Don't just hope it works. Know it works.</p>
+              </div>
+              <div class="copyright">
+                <p>© Copyright 2024
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6 pb-3">
+              <div class="footer-menu text-uppercase">
+                <h5 class="widget-title pb-2">Quick Links</h5>
+                <ul class="menu-list list-unstyled text-uppercase">
+                  <li class="menu-item pb-2">
+                    <a href="#home">Home</a>
+                  </li>
+                  <li class="menu-item pb-2">
+                    <a href="#company-services">Services</a>
+                  </li>
+                  <li class="menu-item pb-2">
+                    <a href="#about-us">About Us</a>
+                  </li>
+                  <li class="menu-item pb-2">
+                    <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6 pb-3">
+              <div class="footer-menu text-uppercase">
+                <h5 class="widget-title pb-2">Social</h5>
+                <div class="social-links">
+                  <ul class="list-unstyled">
+                    <li class="pb-2">
+                      <a href="#">Facebook</a>
+                    </li>
+                    <li class="pb-2">
+                      <a href="#">Twitter</a>
+                    </li>
+                    <li class="pb-2">
+                      <a href="#">Pinterest</a>
+                    </li>
+                    <li class="pb-2">
+                      <a href="#">Instagram</a>
+                    </li>
+                    <li>
+                      <a href="#">Youtube</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="footer-menu contact-item">
+                <h5 class="widget-title text-uppercase pb-2">Contact Us</h5>
+                <p><a href="">720.248.8442</a></p>
+                <p><a href="mailto:">info@ambiancetech.com</a></p>
+                <p>Denver, Colorado, USA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
