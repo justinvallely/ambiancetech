@@ -980,6 +980,7 @@ h5 {
 .subscribe-content input,
 .subscribe-content button {
   height: 65px;
+  margin-bottom: 10px;
 }
 
 /* 9. Brand Collection
